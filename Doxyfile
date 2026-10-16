@@ -1,0 +1,58 @@
+# Doxygen configuration for the Tenable OT -> Power BI export reference app.
+#
+#   doxygen Doxyfile            # then open docs/api/html/index.html
+#
+# Only options that differ from Doxygen's defaults are listed. Regenerate a
+# fully commented template any time with `doxygen -g Doxyfile.full`.
+
+PROJECT_NAME           = "Tenable OT to Power BI Export"
+PROJECT_BRIEF          = "Reference application: Tenable One OT Exposure assets into a Power BI push dataset"
+OUTPUT_DIRECTORY       = docs/api
+
+# --- What to read -----------------------------------------------------------
+INPUT                  = README.md t1ote_export.py tests
+FILE_PATTERNS          = *.py *.md
+RECURSIVE              = YES
+# The README doubles as the front page of the generated docs.
+USE_MDFILE_AS_MAINPAGE = README.md
+
+# --- Python specifics -------------------------------------------------------
+# Doxygen picks the Python parser from the .py extension; this makes the
+# output read like Python (dotted names, no C++ "::" scope operators).
+OPTIMIZE_OUTPUT_JAVA   = YES
+# Treat `##` comment blocks (and docstrings) as documentation.
+PYTHON_DOCSTRING       = YES
+AUTOLINK_SUPPORT       = YES
+MARKDOWN_SUPPORT       = YES
+
+# --- Completeness -----------------------------------------------------------
+# Document everything, including private (underscore) helpers: this is a
+# reference for developers who will read and modify the internals.
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+# --- Navigation -------------------------------------------------------------
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+GENERATE_TREEVIEW      = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+SORT_MEMBER_DOCS       = NO
+
+# --- Output formats ---------------------------------------------------------
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+
+# --- Diagrams ---------------------------------------------------------------
+# Call graphs and class diagrams need Graphviz (`dot`). Flip to YES if it is
+# installed: `brew install graphviz` / `apt install graphviz`.
+HAVE_DOT               = NO
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+
+# --- Noise control ----------------------------------------------------------
+QUIET                  = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
