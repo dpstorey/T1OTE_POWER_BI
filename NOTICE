@@ -1,7 +1,7 @@
 Tenable OT to Power BI Export (reference application)
-Copyright 2026 Dominic Storey
+Copyright (c) 2026 Tenable, Inc.
 
-This product was developed by Dominic Storey.
+This product was developed by Tenable, Inc.
 Author: Dominic Storey <dstorey@barossafarm.com>.
 
 Portions of this software, namely the Tenable GraphQL client logic (endpoint
